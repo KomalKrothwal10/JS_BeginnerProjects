@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            background-color: grey;
+            padding: 2px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .container{
+            background-color: red;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        input{
+            color: rgb(244, 234, 234);
+            background-color: grey;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            
+        }
+        input::placeholder{
+            color: white;
+        }
+        .search{
+            padding: 5px;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            margin: 2px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Prime Number Checker</h1>
+        <div class="container">
+            <input type="number" placeholder="enter a number to check for prime" id="input">
+
+            <button class="search"  onclick="cPrime()">Search</button>
+        </div>
+        <p id="result"></p>
+    </div>
+    <script>
+       
+function cPrime() {
+    const n = parseInt(document.getElementById('input').value);
+    const res = document.getElementById('result');
+    // if (isNaN(n) || n <= 1) {
+    //     res.textContent = "Please enter a number greater than 1.";
+    //     res.style.color = "red";
+    //     return;
+    // }
+    let isPrime = true;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+    if (isPrime) {
+        res.textContent = `${n} is a Prime Number.`;
+        res.style.color = "red";
+    } else {
+        res.textContent = `${n} is a Non-Prime Number.`;
+        res.style.color = "white";
+    }
+}
+    </script>
+</body>
+</html>

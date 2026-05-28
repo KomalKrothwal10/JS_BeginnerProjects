@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        .container{
+            background-color: rgb(124, 73, 82);
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .left,.right{
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            margin: 2px;
+            
+        }
+        #count{
+            font-size: 3rem;
+            padding: 0;margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="count">0</p>
+        <div class="btn">
+
+            <button class="left" onclick="dec()">Decrease</button>
+            <button class="right" onclick="inc()">Increase</button>
+        </div>
+    </div>
+    <script>
+        let c = 0
+        const abc = document.querySelector('#count')
+
+        function dec(){
+            c = c-1 
+            abc.textContent = c 
+        }
+        function inc(){
+            c = c+1 
+            abc.textContent = c
+        }
+
+    </script>
+</body>
+</html>

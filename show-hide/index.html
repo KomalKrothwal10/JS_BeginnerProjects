@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            background-color: grey;
+            padding: 12px;
+        }
+        .contain{
+            display: flex;
+            padding: 12px;
+            background-color: black;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="" class="passes">Enter Password</label>
+        <div class="contain">
+            <input type="password" id="passes">
+            <button id="eye-icon">SHOW</button>
+        </div>
+    </div>
+    <script>
+        let input = document.getElementById('passes');
+        let eyeIcon = document.getElementById('eye-icon');
+
+        eyeIcon.addEventListener('click', function () {
+            if (input.type === 'password') {
+                input.type = 'text';
+                eyeIcon.textContent = '🙉';
+            } else {
+                input.type = 'password';
+                eyeIcon.textContent = '👁️';
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>
